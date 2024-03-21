@@ -1,40 +1,40 @@
 <?php
 session_start();
 if(isset($_SESSION['nombre'])){
-include 'estandaresCO2Model.php';
+include 'verifyModel.php';
 $arreglo = json_decode(file_get_contents('php://input'), true);
 header('Content-Type: application/json');
-$val = [];
+$res = "";
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-        $val[] = consultarEstandaresCO2();
+
         break;
     case 'POST':
-        // Manejar solicitud POST (creación)
-        
-        // ...
+    
+            if(isset($_POST["user"]) && $_POST["pass"]){
+                $user = $_POST["user"];
+                $user = $_POST["pass"];
+                $res= "";
+            }else{
+                $res= "No existen las variables requ";
+            }
+       
         break;
-
     case 'PUT':
-        // Manejar solicitud PUT (actualización)
-        
-        // ...
+       
         break;
-
     case 'DELETE':
-        // Manejar solicitud DELETE (eliminación)
-
-        // ...
+      
         break;
 
     default:
-            $val[] = "Método HTTP no permitido";
+            $res[] = "Método HTTP no permitido";
             http_response_code(405); // Método no permitido
         break;
 }
 
-echo json_encode($val);
+echo json_encode($res);
 }else{
     header("Location:index.php");
 }

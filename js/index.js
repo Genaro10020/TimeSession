@@ -7,7 +7,6 @@ const Index = {
     },
     mounted(){
      
-    
     },
     methods:{
         verifyUser(){
