@@ -8,13 +8,9 @@ function tomandoTiempo()
     $session_time = gmdate("H:i:s", $session_duration);
     $time_acumulado = $_SESSION['time_before'];
     $usuario = $_SESSION['user'];
-    $hoy = date("Y-m-d");
-    if($hoy !== $_SESSION['date']){
-        $_SESSION['time_before'] = '00:00:00';
-    }
 
-    
-    return array($session_time, $time_acumulado, $usuario,$_SESSION['time_before']);
+   
+    return array($session_time, $time_acumulado, $usuario, $_SESSION['time_before']);
 }
 
 function updateTime()

@@ -27,8 +27,14 @@ function validateUser($user, $password)
         $_SESSION['time_before'] = $fila['time'];
         $_SESSION['date'] = $fila['fecha'];
         $_SESSION['login_time'] = time();
+
+        $hoy = date("Y-m-d");
+
+        if ($hoy !== $_SESSION['date']) {
+            $_SESSION['time_before'] = '00:00:00';
+        }
     }
     $stmt->close();
     $conexion->close();
-    return ($count > 0) ? true: false;
+    return ($count > 0) ? true : false;
 }

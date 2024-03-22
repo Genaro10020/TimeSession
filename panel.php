@@ -8,8 +8,8 @@ if (isset($_SESSION['user'])) {
         <meta charset="utf-8">
         <title>Panel</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> <!--BOOTSRAP CSS-->
-        <link href="https://fonts.googleapis.com/css?family=Nunito|Overpass&display=swap" rel="stylesheet"><!--CSS-->
-        <link rel="stylesheet" href="css/index.css" defer>
+        <link href="https://fonts.googleapis.com/css?family=Nunito|Overpass&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/index.css" defer><!--CSS-->
         <script src="https://unpkg.com/vue@3.2.36/dist/vue.global.js"></script><!--VUE 3-->
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script><!--AXIOS-->
     </head>
