@@ -15,7 +15,9 @@ const App = {
         takeTime() {
             setInterval(() => {
                 axios.get('timeController.php')
+               
                     .then(response => {
+                        console.log(response.data);
                         this.contador = response.data[0];
                         this.acumulado = response.data[1];
                         this.usuario = response.data[2];

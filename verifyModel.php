@@ -30,5 +30,5 @@ function validateUser($user, $password)
     }
     $stmt->close();
     $conexion->close();
-    return ($count > 0) ? true : false;
+    return ($count > 0) ? true: false;
 }
