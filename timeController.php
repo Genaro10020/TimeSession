@@ -1,25 +1,19 @@
 <?php
-
-include 'verifyModel.php';
+session_start();
+include 'timeModel.php';
 $datos = json_decode(file_get_contents('php://input'), true);
 header('Content-Type: application/json');
 $res = "";
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-
+        $res = tomandoTiempo();
         break;
     case 'POST':
-        if (isset($datos['user']) && isset($datos['password'])) {
-            $user = $datos["user"];
-            $password = $datos["password"];
-            $res = validateUser($user, $password);
-        } else {
-            $res = "No existen los datos.";
-        }
+
         break;
     case 'PUT':
-
+        $res = updateTime();
         break;
     case 'DELETE':
 

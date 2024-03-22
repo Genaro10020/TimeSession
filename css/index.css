@@ -27,7 +27,7 @@ body {
     width: 100%;
     padding: 10px;
     height: 100%;
-    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);
     border-radius: 3px 3px 3px 3px;
 }
 
@@ -41,22 +41,23 @@ body {
 
 .titulo {
     font-size: 120%;
-    color:#d3d3d3;
+    color: #d3d3d3;
     text-align: center;
     margin-bottom: 20px;
 }
 
 
-.login form  label {
-    color:#d3d3d3;
-    font-size: 80%; 
+.login form label {
+    color: #d3d3d3;
+    font-size: 80%;
 }
 
-.login form  .submit {
+.login form .submit {
     display: flex;
     justify-content: center;
     text-align: center;
 }
+
 .submit button {
     cursor: pointer;
 }
@@ -80,13 +81,13 @@ body {
 .login input::placeholder {
     font-family: 'Overpass', sans-serif;
     color: #c7c7c7;
-    
+
 }
 
 .login button {
     font-family: 'Overpass', sans-serif;
     font-size: 80%;
-    color:#1b262c;
+    color: #1b262c;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,14 +95,14 @@ body {
     height: 40px;
     border: none;
     border-radius: 3px 3px 3px 3px;
-   
+
     background-color: #bbe1fa;
     margin-top: 10px;
 }
 
 .login button:hover {
     background-color: #0f4c75;
-    color:#bbe1fa;
+    color: #bbe1fa;
 }
 
 
@@ -109,7 +110,7 @@ body {
 .pie-form {
 
     font-size: 70%;
-    text-align: center;    
+    text-align: center;
     margin-top: 30px;
 }
 
@@ -125,3 +126,49 @@ body {
 }
 
 
+.contenido-panel {
+    height: 100vh;
+    background-color: #07416D;
+}
+
+.contenido-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contador {
+    font-size: 7em;
+    color: white;
+
+}
+
+
+.boton {
+    font-family: Roboto, sans-serif;
+    font-weight: 0;
+    font-size: 40px;
+    color: #c9c9c9;
+    background: linear-gradient(90deg, #0066CC 0%, #c500cc 100%);
+    width: 300px;
+    height: 300px;
+    padding: 10px 10px 10px 10px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    direction: flex;
+    box-shadow: 0px 2px 10px rgb(26, 26, 26);
+
+}
+
+.boton:hover {
+    transition: all 1s ease;
+    background: linear-gradient(90deg, #cc0000 0%, #cc5c00 100%);
+    color: #770303;
+    border: solid 4px #b66202;
+    font-weight: bold;
+    box-shadow: inset 10px 2px 10px rgb(26, 26, 26);
+}

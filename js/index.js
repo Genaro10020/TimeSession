@@ -1,24 +1,28 @@
-const Index = {
-    data(){
-        return{
-            user:'',
-            password:'',
+const App = {
+    data() {
+        return {
+            user: '',
+            password: '',
         }
     },
-    mounted(){
-     
+    mounted() {
+
     },
-    methods:{
-        verifyUser(){
-            axios.post("../verifyController.php",{
-                user:this.user,
-                pass:this.pass
-            }).then(response =>{
+    methods: {
+        verifyUser() {
+            console.log(this.user + " / " + this.password)
+            axios.post("verifyController.php", {
+                user: this.user,
+                password: this.password
+            }).then(response => {
                 console.log(response.data);
-            }).catch(error =>{
-                console.log("Error en Axios "+response.error);
+                if (response.data === true) {
+                    window.location.href = 'panel.php';
+                }
+            }).catch(error => {
+                console.log("Erro en Axios " + error);
             });
         }
     }
 }
-var mountedApp = Vue.createApp(Index).mount('#vue');
+var mountedApp = Vue.createApp(App).mount('#vue');
