@@ -4,6 +4,7 @@ const App = {
             usuario: 'Tu eres',
             contador: 'Tomando el tiempo..',
             acumulado: '',
+            existeseson: false,
         }
     },
     mounted() {
@@ -15,30 +16,41 @@ const App = {
         takeTime() {
             setInterval(() => {
                 axios.get('timeController.php')
-               
                     .then(response => {
-                        console.log(response.data);
-                        this.contador = response.data[0];
-                        this.acumulado = response.data[1];
-                        this.usuario = response.data[2];
+                        console.log("Tomando Tiempo", response.data);
+
+                        if (response.data[0] === true) {
+                            this.existeseson = true;
+                            this.contador = response.data[1];
+                            this.acumulado = response.data[2];
+                            this.usuario = response.data[3];
+                        } else {
+                            this.existeseson = false;
+                            window.location.href = "index.html";
+                        }
+
                     })
                     .catch(error => {
                         console.error('Error al obtener el tiempo:', error);
                     });
             }, 1000);
         },
-        async cerrarSession() {
+        cerrarSession() {
             //if (!confirm("Va a salir y su contador se sumara...")) return true;
-            console.log("Cerrando sesión...");
-            try {
-                const response = await axios.put('timeController.php');
-                console.log(response.data);
-                if (response.data[0] === true) {
-                    window.location.href = "index.php";
+            axios.put('timeController.php', {
+            }).then(response => {
+                console.log("Respuesta", response.data);
+                if (response.data === true) {
+                    console.log("alindex");
+                    window.location.href = "index.html";
+                } else {
+                    console.error('Problemas en cerrar Session');
                 }
-            } catch (error) {
-                console.error('Problemas en cerrar Session:', error);
-            }
+            }).catch(error => {
+                console.log("error en axios" + error);
+            })
+
+
         }
     }
 }

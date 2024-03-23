@@ -7,7 +7,7 @@ $res = "";
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-
+            $res=verifySession();
         break;
     case 'POST':
         if (isset($datos['user']) && isset($datos['password'])) {

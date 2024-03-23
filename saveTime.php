@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_SESSION['user']) && isset($_SESSION['id'])) {
     include("conexion.php");
     $estado = false;
@@ -10,7 +11,7 @@ if (isset($_SESSION['user']) && isset($_SESSION['id'])) {
     $login_time = $_SESSION['login_time'];
     $session_duration = $current_time - $login_time;
     $session_time = gmdate("H:i:s", $session_duration);
-
+    $time_befero = $_SESSION['time_before'];
     if ($_SESSION['date'] === $fecha_actual) {
         // Converti  tiempos a segundos
         $session_time_seconds = strtotime($session_time) - strtotime('00:00:00');
@@ -31,6 +32,9 @@ if (isset($_SESSION['user']) && isset($_SESSION['id'])) {
     $stmt->close();
     $conexion->close();
     $estado_str = $estado ? true : false;
-
-    return array($estado_str, $session_time, $_SESSION['time_before']);
+    session_destroy();
+    return $estado_str;
+} else {
+    session_destroy();
+    return true;
 }

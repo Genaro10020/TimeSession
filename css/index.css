@@ -129,12 +129,17 @@ body {
 .contenido-panel {
     height: 100vh;
     background-color: #07416D;
-}
-
-.contenido-panel {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
+}
+
+.mostrar {
+    display: flex;
+}
+
+.ocultar {
+    display: none;
 }
 
 .contador {

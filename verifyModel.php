@@ -1,6 +1,11 @@
 <?php
 include("conexion.php");
 
+function verifySession()
+{
+    return include("saveTime.php");
+}
+
 function validateUser($user, $password)
 {
     global $conexion;

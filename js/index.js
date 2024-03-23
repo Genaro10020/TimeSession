@@ -7,9 +7,17 @@ const App = {
         }
     },
     mounted() {
-
+        this.verySession();
     },
     methods: {
+        verySession() {
+            axios.get("verifyController.php", {
+            }).then(response => {
+                console.log(response.data)
+            }).catch(error => {
+                console.log(error.message)
+            })
+        },
         verifyUser() {
             console.log(this.user + " / " + this.password)
             axios.post("verifyController.php", {
@@ -18,7 +26,7 @@ const App = {
             }).then(response => {
                 console.log(response.data);
                 if (response.data === true) {
-                    window.location.href = 'panel.php';
+                    window.location.href = 'panel.html';
                 } else if (response.data == false) {
                     this.bandera = false;
                     setTimeout(() => {

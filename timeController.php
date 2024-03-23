@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include 'timeModel.php';
 $datos = json_decode(file_get_contents('php://input'), true);
 header('Content-Type: application/json');
@@ -13,7 +13,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
         break;
     case 'PUT':
-        $res = updateTime();
+        $res = cerrarSession();
         break;
     case 'DELETE':
 
