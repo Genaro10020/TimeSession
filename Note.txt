@@ -1,0 +1,18 @@
+Codigo Vanill o Espagueti
+-PHP
+-Vue3
+-Axios
+-JavaScript
+
+-Nombre BD
+	time_users
+-Tabla
+	users
+-Datos de Tabla
+	id INT (AutoIncrement)
+	user VARCHAR (50)
+	password VARCHAR (50)
+	fecha DATE 
+	time TIME
+
+Nota: Se adjunta BD. 
